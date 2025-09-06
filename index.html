@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Face Attendance — Frontend Only (Supabase + face-api.js)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header><h1>Face Attendance (Frontend)</h1></header>
+    <main>
+      <section class="left">
+        <div class="video-wrap">
+          <video id="video" autoplay playsinline></video>
+          <canvas id="overlay"></canvas>
+        </div>
+        <div class="controls">
+          <button id="btnLoadStudents">Load Students (from Supabase)</button>
+          <button id="btnStart" disabled>Start Scanning</button>
+          <button id="btnStop" disabled>Stop</button>
+          <button id="btnExport" disabled>Export CSV</button>
+        </div>
+        <div class="status">
+          <div>Models: <span id="modelStatus">not loaded</span></div>
+          <div>Students loaded: <span id="studentsCount">0</span></div>
+          <div>Present: <span id="presentCount">0</span></div>
+          <div>Last match: <span id="lastMatch">—</span></div>
+        </div>
+      </section>
+
+      <section class="right">
+        <h2>Present</h2>
+        <table id="presentTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Full Name</th>
+              <th>Check-in</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <hr />
+        <h2>Setup</h2>
+        <p>
+          Edit <code>config.js</code> with your Supabase project URL and anon
+          key, then click <strong>Load Students</strong>.
+        </p>
+        <p>
+          Upload student images to Supabase storage or any public URL and add
+          rows to <code>students</code> table (columns: <code>student_id</code>,
+          <code>full_name</code>, <code>image_url</code>).
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Built with face-api.js + Supabase. Rename <code>config.example.js</code> →
+      <code>config.js</code> and fill keys.
+    </footer>
+
+    <!-- face-api.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <!-- supabase client -->
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+    <!-- config (user provides) -->
+    <script src="config.js"></script>
+    <!-- app (web related logics) -->
+    <script src="app.js"></script>
+  </body>
+</html>

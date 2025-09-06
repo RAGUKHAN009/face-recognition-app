@@ -1,0 +1,5 @@
+supabase url
+https://tkwlybtmpcbspwwliexi.supabase.co
+
+anon key
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRrd2x5YnRtcGNic3B3d2xpZXhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcxODA1NTEsImV4cCI6MjA3Mjc1NjU1MX0.Xvv4vqmEetQtrJA1K0AdT\_\_TFj5JwKkncM1ru0Rw7N8
